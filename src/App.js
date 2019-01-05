@@ -1,28 +1,25 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import CartHeader from './components/CartHeader.js';
+import CartFooter from './components/CartFooter.js';
+import CartItems from './components/CartItems.js';
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+ render() {
+   var cartItemList = [
+    { id: 1, product: { id: 40, name: 'Mediocre Iron Watch', priceInCents: 399 }, quantity: 1 },
+    { id: 2, product: { id: 41, name: 'Heavy Duty Concrete Plate', priceInCents: 499 }, quantity: 2 },
+    { id: 3, product: { id: 42, name: 'Intelligent Paper Knife', priceInCents: 1999 }, quantity: 1 },
+  ]
+
+  return (
+    <div className="app">
+      <CartHeader></CartHeader>
+      <CartItems cartItemList={cartItemList}></CartItems>
+      <CartFooter copyright='2018'></CartFooter>
+    </div>
+  );
+}
 }
 
 export default App;
