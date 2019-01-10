@@ -16,6 +16,7 @@ const AddItem = (props) => {
                 <input onChange = {props.quantity} type="number" id="quantity" className="form-control" required></input>
                 <h3>Products</h3>
                 <select onChange = {props.select} id="product-select" className="form-control" >
+                <option value="" id="option" disabled selected>Add to order...</option>
                 {props.items.map(product => <option key={product.id} value={product.name}>
                 {product.name} </option>)}
                     
