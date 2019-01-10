@@ -2,8 +2,9 @@ import React from 'react';
 import Item from './Item.js';
 
 const CartItems = (props) => {
-
-  return (
+ 
+ 
+ return (
 <div className='container'>
   <h1>Cart Items</h1>
 
@@ -13,11 +14,20 @@ const CartItems = (props) => {
         <div className="col-md-8">Product</div>
         <div className="col-md-2">Price</div>
         <div className="col-md-2">Quantity</div>
+        
       </div>
     </div>
-    {props.cartItemsList}
+    {props.cartItems.map((item, idx) => {
+      return (
+      <Item
+      key={idx}
+      name={item.product.name}
+      price={item.product.price}
+      quantity={item.quantity}
+      />
+    )})}
   </div>
-  </div>
+</div>
   )
 }
 
